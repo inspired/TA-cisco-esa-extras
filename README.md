@@ -3,11 +3,12 @@ SplunK_TA_cisco-esa-extras
 ## Super magic search!!!
 
 <pre>
-sourcetype=cisco:esa:textmail NOT "Custom Log Entry" 
+sourcetype=cisco:esa:textmail NOT tag=malware
 | eventstats values(src_ip) AS src_ip BY icid
 | eventstats values(dest_ip) AS dest_ip BY dcid
 | stats values(internal_message_id) AS tmpinternal_message_id
 values(icid) AS icid
+first(_time) AS first_time
 values(action) AS action
 values(file_name) AS file_name
 values(message_subject) AS subject
@@ -28,6 +29,7 @@ values(user) AS user
 | eval msg=mvjoin(tmp, " ")
 | rex field=sender "@(?<sender_domain>.*)"
 | stats values(icid) AS icid
+first(first_time) AS _time
 values(action) AS action
 values(file_name) AS file_name
 values(subject) AS subject
@@ -44,5 +46,4 @@ values(user) AS user
      values(tmp) as internal_message_id
      values(src_ip) AS src_ip
      values(dest_ip) AS dest_ip BY msg
-
 </pre>
