@@ -1,28 +1,40 @@
 Splunk_TA_cisco-esa-extras
 
+# Introduction
+This add-on has two functions:
+* Parses a custom log entry from ESA generated for every attachment and makes it CIM compliant for the Malware data model
+* Runs a saved search that creates a transaction of e-mail logs and AMP logs and makes it CIM compliant for the E-mail AND Malware data model (if AMP Malware is detected)
+
 # Instructions
 
-## Create Incoming Content Filter in Cisco Ironport ESA Appliance
+
+
+## Get Cisco ESA Malware logs into Splunk
+
+A saved search is run every hour that collects E-mail and AMP Malware logs into a summary index. The saved search is not required 
+
+### Create Incoming Content Filter in Cisco Ironport ESA Appliance
 * Pick a desired name.
 * Order: 1
 
-### Conditions:
+#### Conditions:
 * Condition: Attachment File Info
 * Rule: attachment-mimetype != "fishpudding/cheese" (we always want this to be triggered)
 
-### Actions:
+#### Actions:
 * Add Log Entry
 * Rule:
 <pre>
 hostname=$Hostname category=malware filtername=$FilterName policy="$Policy" sender=$envelopesender recipient="$EnvelopeRecipients" subject="$Subject" file_name="$filenames" src_int="$RecvInt" receiving_listener="$RecvListener" src_ip=$RemoteIP src_host=$remotehost x-ironport-AV=$Header['X-IronPort-AV']
 </pre>
 
-### Mail Policies: Content Filters
+#### Mail Policies: Content Filters
 * Enable Content Filters
 * Add the filter you created to the policy you desired (i.e. Default Policy).
 * Tick Enable box
 
-## Super magic search!!!
+ 
+# Super magic search!!!
 
 <pre>
 sourcetype=cisco:esa:textmail NOT tag=malware
