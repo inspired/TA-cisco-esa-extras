@@ -1,4 +1,26 @@
-SplunK_TA_cisco-esa-extras
+Splunk_TA_cisco-esa-extras
+
+# Instructions
+
+## Create Incoming Content Filter in Cisco Ironport ESA Appliance
+* Pick a desired name.
+* Order: 1
+
+### Conditions:
+* Condition: Attachment File Info
+* Rule: attachment-mimetype != "fishpudding/cheese" (we always want this to be triggered)
+
+### Actions:
+* Add Log Entry
+* Rule:
+<pre>
+hostname=$Hostname category=malware filtername=$FilterName policy="$Policy" sender=$envelopesender recipient="$EnvelopeRecipients" subject="$Subject" file_name="$filenames" src_int="$RecvInt" receiving_listener="$RecvListener" src_ip=$RemoteIP src_host=$remotehost x-ironport-AV=$Header['X-IronPort-AV']
+</pre>
+
+### Mail Policies: Content Filters
+* Enable Content Filters
+* Add the filter you created to the policy you desired (i.e. Default Policy).
+* Tick Enable box
 
 ## Super magic search!!!
 
