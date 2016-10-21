@@ -2,8 +2,8 @@ Splunk_TA_cisco-esa-extras
 
 # Introduction
 This add-on has two functions:
-* Parses a custom log entry from ESA generated for every attachment and makes it CIM compliant for the Malware data model
-* Runs a saved search that creates a transaction of e-mail logs and AMP logs and makes it CIM compliant for the E-mail AND Malware data model (if AMP Malware is detected)
+1. Parses a custom log entry from ESA generated for every attachment and makes it CIM compliant for the Malware data model
+2. Runs a saved search that creates a transaction of e-mail logs and AMP logs and makes it CIM compliant for the E-mail AND Malware data model (if AMP Malware is detected)
 
 # Instructions
 
@@ -11,7 +11,7 @@ This add-on has two functions:
 
 ## Get Cisco ESA Malware logs into Splunk
 
-A saved search is run every hour that collects E-mail and AMP Malware logs into a summary index. The saved search is not required 
+A saved search is run every hour that collects E-mail and AMP Malware logs into a summary index. The saved search is not required for basic Malware detection, but for E-Mail and AMP Malware detection
 
 ### Create Incoming Content Filter in Cisco Ironport ESA Appliance
 * Pick a desired name.
