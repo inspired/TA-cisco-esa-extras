@@ -43,6 +43,9 @@ This add-on has two functions:
 1. Parses a custom log entry from ESA generated for every attachment and makes it CIM compliant for the Malware data model
 2. Runs a saved search that creates a transaction of e-mail logs and AMP logs making them it CIM compliant for the E-mail AND Malware data model (if AMP Malware is detected)
 
+
+This Add-on was sponsored by a client.
+
 ##### Scripts and binaries
 
 No scripts or binaries are included.
@@ -87,15 +90,9 @@ Version 1.0 of the Cisco ESA Extras Add-on for Splunk Enterprise incorporates th
 
 ##### Support and resources
 
-**The Cisco ESA Extras Add-on for Splunk Enterprise is supported for all users who have a Splunk App for Enterprise Security Support Contract with Datametrix**
+**The Cisco ESA Extras Add-on for Splunk Enterprise is supported on a best effort basis. Commercial (paid) support is available by contacting the author.
 
-* Hours: Mon-Fri 08:00 - 16:00 Central European Time
-* Observed Holidays: All Norwegian Public Holidays, December 23 to January 2, Palm Sunday to Easter Monday.
-* Support URL: https://github.com/inspired/TA-Clearswift_SEG/issues
-
-**For users who are not customers of Datametrix, best effort support is available via Splunk Answers**
-
-* Access questions and answers specific to the Cisco ESA Extras Add-on for Splunk Enterprise at http://answers.splunk.com/answers/app/2916
+* Access questions and answers specific to the Cisco ESA Extras Add-on for Splunk Enterprise at http://answers.splunk.com/answers/app/XX
 
 ## INSTALLATION AND CONFIGURATION
 
