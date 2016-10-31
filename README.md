@@ -222,8 +222,6 @@ The Cisco ESA Extras Add-on for Splunk Enterprise contains no lookup files.
 
 
 
-
-
 # Super magic search!!!
 
 <pre>
