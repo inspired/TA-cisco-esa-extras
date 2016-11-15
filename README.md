@@ -183,7 +183,7 @@ Unknown
     1. Actions:
     - Add Log Entry
      - Rule: 
-      `hostname=$Hostname category=malware filtername=$FilterName policy="$Policy" sender=$envelopesender recipient="$EnvelopeRecipients" subject="$Subject" file_name="$filenames" src_int="$RecvInt" receiving_listener="$RecvListener" src_ip=$RemoteIP src_host=$remotehost x-ironport-AV=$Header['X-IronPort-AV']`
+      `hostname=$Hostname category=mail_with_attachment filtername=$FilterName policy="$Policy" sender=$envelopesender recipient="$EnvelopeRecipients" subject="$Subject" file_name="$filenames" src_int="$RecvInt" receiving_listener="$RecvListener" src_ip=$RemoteIP src_host=$remotehost x-ironport-AV=$Header['X-IronPort-AV']`
    
   1. Mail Policies: Content Filters
   - Enable Content Filters
