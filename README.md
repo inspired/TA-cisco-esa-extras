@@ -33,7 +33,7 @@
 | Vendor Products | Cisco IronPort ESA C370 on AsyncOS 7.x  or higher |
 | Has index-time operations | False |
 | Create an index | False |
-| Implements summarization | False |
+| Implements summarization | True |
 
 The Cisco ESA Extras Add-on for Splunk Enterprise allows a Splunk® Enterprise administrator to extract and filter event information from Cisco Ironport ESA appliances. The Add-on requires the official Splunk Add-on for Cisco ESA already configured according to Splunk Enterprise Documentation. This Add-on provides extra functionality such AS transactioning events for the Email and Malware data models for CIM compliance.
 The Add-on requires customization on your Cisco ESA Ironport Appliance.
@@ -191,7 +191,9 @@ Unknown
   - Add the filter you created to the policy you desired (i.e. Default Policy).
   - Tick Enable box
 
-3. Send some malware e-mails through your ESA appliance and search for "Custom Log Entry" in Splunk. You should get back results
+3. Create an index in Splunk called esa_summary OR create a copy of default/macros.conf in local/macros.conf replacing index=esa_summary with index=summary
+
+4. Send some malware e-mails through your ESA appliance and search for "Custom Log Entry" in Splunk. You should get back results
 
 ## USER GUIDE
 
